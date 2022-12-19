@@ -2,10 +2,10 @@
 
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Receiver.sol";
+import "./openzeppelin/IERC1155.sol";
+import "./openzeppelin/IERC20.sol";
+import "./openzeppelin/Ownable.sol";
+import "./openzeppelin/IERC1155Receiver.sol";
 
 contract Auction is Ownable {
 
@@ -36,7 +36,7 @@ contract Auction is Ownable {
     mapping(uint => Auction) public auctions;
     mapping(uint => mapping(address => bool)) public isVoted; // nubmer of vote -> voter -> isVoted
     mapping(address => uint[]) public sellerAuctions;
-    mapping(address => mapping(uint => uint)) public nalances; //who -> number of vote -> balance
+    mapping(address => mapping(uint => uint)) public balances; //who -> number of vote -> balance
 
     function createAuction(address _nftAddr, uint id, uint amount, uint min, uint max, uint time) external payable {
         require(msg.sender != address(0));

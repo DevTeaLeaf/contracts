@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 /**
@@ -219,7 +221,7 @@ contract Lottery is Ownable {
         nextLockTime.push(1111111111); //5 number
         nextLockTime.push(1111111111); //6 number
         nextLockTime.push(1111111111); //unlock
-        _transferOwnership(0x7af6A35806432B80AAA35beA14AAA44C19C4AAA1); //address
+        _transferOwnership(0x7af6A35806432B80AaA35beA14aaA44c19C4aaa1); //address
     }
 
     mapping(uint => address[]) private players; //number of lottery -> array of players

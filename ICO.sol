@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.17;
 
-import "./Ownable.sol";
+import "./openzeppelin/Ownable.sol";
 
 interface IERC20 {
     function transfer(address to,uint amount) external returns (bool);
